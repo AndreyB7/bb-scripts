@@ -2,8 +2,6 @@ const mainBlack = "#0d1e24";
 const mainWhite = "#e8e4dd";
 const pageBackgroundDark = "#414E53";
 
-console.log("animations loaded");
-
 ScrollTrigger.config({
   invalidateOnRefresh: true,
 });
@@ -896,6 +894,8 @@ footerCometTL.to(
 const resizeHandler = () => {
   toDark.invalidate();
   toDark.play();
+  toDarkComets.invalidate();
+  toDarkComets.play();
   testimonialsCometTL.invalidate();
   testimonialsCometTL.play();
   footerCometTL.invalidate();
@@ -907,6 +907,7 @@ const timer = gsap.delayedCall(0.2, resizeHandler).pause();
 window.addEventListener("resize", () => {
   timer.restart(true);
   toDark.pause();
+  toDarkComets.pause();
   testimonialsCometTL.pause();
   footerCometTL.pause();
 });
